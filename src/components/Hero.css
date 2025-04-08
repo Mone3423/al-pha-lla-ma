@@ -1,0 +1,119 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Aumenta la opacidad del fondo */
+  z-index: 1;
+}
+.hero-title {
+  font-size: clamp(100px, 15vw, 250px); /* Aumenta el tamaño base */
+  font-weight: bold;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  max-width: 95vw; /* Ajuste dinámico */
+  white-space: nowrap; /* Evita que se divida */
+}
+
+.title-wrapper {
+  width: 100%;
+  text-align: center;
+  
+}
+
+.text-container {
+  width: 100%;
+  max-width: 90vw; /* Ajuste dinámico */
+  padding: 2rem;
+}
+.subtitle-wrapper {
+  color: aliceblue;
+  width: 100%;
+  text-align: center;
+}
+/* Video ocupa toda la sección */
+
+
+.video-bg {
+  object-fit: cover !important;
+  width: 100%;
+  height: 100%;
+}
+
+/* Contenido centrado */
+.interactive-content {
+  position: absolute;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .hero {
+    height: 100vh;
+    min-height: auto;
+    padding: 1rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .decrypted-text {
+    font-size: 1rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .decrypted-text-container {
+    margin-top: 1rem;
+  }
+
+  .text-container {
+    padding: 20px;
+  }
+
+  .scroll-indicator {
+    bottom: 1rem;
+  }
+
+  .chevron {
+    width: 15px;
+    height: 15px;
+  }
+}

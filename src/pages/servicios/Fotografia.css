@@ -1,0 +1,282 @@
+/* 🌎 Estilos Globales */
+body {
+  color: #f7f7f7;
+  line-height: 1.6;
+  background:  rgb(10, 10, 10);
+  margin: 0;
+  padding: 0;
+}
+
+/* 📦 Contenedor Principal */
+.paquete-container {
+  text-align: center;
+  margin: 80px auto;
+  padding: 40px 20px;
+  max-width: 1200px;
+}
+
+/* 📝 Títulos y Textos */
+h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  letter-spacing: 0.5px;
+  color:  #f7f7f7;
+}
+
+p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #c7bfbf;
+}
+
+/* 🖼️ Galería Mejorada */
+.galeria {
+  height: 600px;
+  position: relative;
+  margin: 60px auto;
+  width: 90%;
+  max-width: 1400px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(206, 187, 187, 0.1);
+}
+
+/* 🎁 Opciones de Paquetes */
+.paquete-opciones {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin: 60px 0;
+}
+
+/* 🏷️ Tarjeta de Paquete */
+.paquete-card {
+  background: #424141;
+  padding: 35px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  width: 370px;
+  gap: 25px;
+  box-shadow: 0 8px 20px rgba(10, 10, 10, 0.208);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.paquete-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(202, 199, 199, 0.15);
+}
+
+/* 🔵 Círculo de Precio */
+.paquete-circulo {
+  width: 140px;
+  height: 140px;
+  background: #0996ac;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(107, 134, 255, 0.4);
+  transition: 0.3s ease;
+}
+
+.paquete-card:hover .paquete-circulo {
+  background: #84acb9;
+}
+
+.paquete-circulo h3 {
+  font-size: 16px;
+  margin: 0;
+  color: white;
+}
+
+.paquete-circulo p {
+  font-size: 14px;
+  margin: 8px 0 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* 📋 Lista de Beneficios */
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+ul li {
+  margin-bottom: 15px;
+  padding-left: 30px;
+  position: relative;
+  font-size: 18px;
+  color: #ede6e6;
+  transition: color 0.3s ease;
+}
+
+ul li::before {
+  content: "◦";
+  color: #afb6b8;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.paquete-card:hover ul li {
+  color:#04242f;
+}
+/* 🔹 Botones flotantes */
+.botones-flotantes {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+  transform: translateY(-50%);
+}
+
+.botones-flotantes button {
+  background: #ff0e0e70;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.botones-flotantes button:hover {
+  background: #9f9191;
+  transform: scale(1.1);
+}
+
+/* 🔹 Sección de Diseño */
+.diseno-grafico {
+  background: #1b1c1ee9;
+  padding: 40px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.diseno-grafico h2 {
+  font-size: 2rem;
+  color: #c96f6f;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.diseno-grafico p {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* 🔹 Contenedor de Servicios de Diseño */
+.diseno-servicios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* 🔹 Tarjetas de Diseño */
+.diseno-card {
+  background: rgba(15, 7, 7, 0.436);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  text-align: center;
+}
+
+.diseno-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #936060;
+}
+
+.diseno-card .precio {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #919993;
+  margin-bottom: 10px;
+}
+
+.diseno-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.diseno-card ul li {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  position: relative;
+}
+
+.diseno-card ul li::before {
+  content: "✔";
+  color: #9f060b;
+  font-weight: bold;
+  position: absolute;
+  left: -10px;
+}
+
+/* 🔹 Responsive para móviles */
+@media (max-width: 768px) {
+  .diseno-servicios {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .diseno-card {
+    max-width: 90%;
+  }
+
+  .paquete-container {
+    margin: 40px auto;
+    padding: 20px;
+  }
+  
+  .galeria {
+    height: 400px;
+    margin: 40px auto;
+  }
+  
+  .paquete-opciones {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .paquete-card {
+    width: 100%;
+    flex-direction: column;
+    padding: 25px;
+  }
+  
+  .paquete-circulo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+  }
+  .botones-flotantes {
+    right: 10px;
+  }
+
+  .botones-flotantes button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}

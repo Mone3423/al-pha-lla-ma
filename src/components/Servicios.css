@@ -1,0 +1,230 @@
+.paquete-servicios {
+  background: #eae7e7;
+  color: rgb(23, 21, 21);
+  padding: 20px 10px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+}
+.paquete-servicio > *:not(:last-child) {
+  border-bottom: 5px solid #1d1313; /* Color de la línea */
+  padding-bottom: 1.5rem; /* Espacio bajo el contenido */
+  margin-bottom: 1.5rem; /* Espacio entre elementos */
+}
+.paquete-contenedor {
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  display: grid;
+  place-items: center;
+  min-height: 80vh;
+  position: relative;
+}
+.paquete-contenedor > *:not(:last-child) {
+  border-bottom: 5px solid #1d1313; /* Color de la línea */
+  padding-bottom: 1.5rem; /* Espacio bajo el contenido */
+  margin-bottom: 1.5rem; /* Espacio entre elementos */
+}
+.centro-paquete {
+  background: #ff0e0e;
+  padding: 30px;
+  border-radius: 50%;
+  width: 220px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(13, 12, 12, 0.2);
+  animation: pulse 2s infinite alternate;
+}
+
+.servicios-orbita {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: rotate 40s linear infinite;
+}
+
+.servicio {
+  background: rgba(19, 18, 18, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  width: 240px;
+  position: absolute;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: aparecer 0.5s forwards;
+  transform-origin: center;
+}
+
+detalles-centro p {
+  font-size: 0.9rem;
+  margin: 5px 0;
+}
+
+.servicio {
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+
+.custom-scroll-text::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 70%, rgba(255,255,255,0.6) 15%, transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(255,255,255,0.4) 20%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(221, 208, 228, 0.2) 10%, transparent 40%);
+  mix-blend-mode: overlay;
+  animation: watercolor-movement 25s infinite linear;
+}
+
+.custom-scroll-text::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="4"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.25"/></svg>'),
+    linear-gradient(to bottom right, 
+      rgba(195, 61, 191, 0.15), 
+      rgba(165, 118, 127, 0.15));
+  pointer-events: none;
+}
+
+@keyframes watercolor-movement {
+  0%, 100% { 
+    transform: rotate(0deg) scale(1); 
+    opacity: 0.8;
+  }
+  25% { 
+    transform: rotate(1deg) scale(1.02) translateX(2px); 
+  }
+  50% { 
+    transform: rotate(-1deg) scale(1.03) translateY(-3px);
+    opacity: 0.9;
+  }
+  75% { 
+    transform: rotate(0.5deg) scale(1.01) translateX(-2px);
+  }
+}
+
+@media (max-width: 768px) {
+  .paquete-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: auto;
+  }
+
+  /* Ocultamos la animación de rotación, pero mostramos los cuadros */
+  .servicios-orbita {
+    position: static;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Asegurar que los cuadros sean visibles */
+  .servicio {
+    position: relative; /* Permite que se acomoden en el flujo normal */
+    width: 90%; /* Ajusta el ancho para que no sean muy grandes */
+    max-width: 300px; /* Limita el tamaño */
+    text-align: center;
+    background: rgba(19, 18, 18, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    opacity: 1; /* Se asegura de que sean visibles */
+    transform: none; /* Elimina transformaciones */
+    animation: none; /* Desactiva la animación de entrada */
+  }
+}
+
+
+
+/* Posicionamiento circular */
+.servicio:nth-child(1) {
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: 0.2s;
+}
+
+.servicio:nth-child(2) {
+  top: 15%;
+  left: 15%;
+  animation-delay: 0.4s;
+}
+
+.servicio:nth-child(3) {
+  top: 15%;
+  right: 15%;
+  animation-delay: 0.6s;
+}
+
+.servicio:nth-child(4) {
+  top: 40%;
+  left: 5%;
+  animation-delay: 0.8s;
+}
+
+.servicio:nth-child(5) {
+  top: 40%;
+  right: 5%;
+  animation-delay: 1.0s;
+}
+
+.servicio:nth-child(6) {
+  bottom: 15%;
+  left: 15%;
+  animation-delay: 1.2s;
+}
+
+.servicio:nth-child(7) {
+  bottom: 15%;
+  right: 15%;
+  animation-delay: 1.4s;
+}
+
+.servicio:nth-child(8) {
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: 1.6s;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.95);
+  }
+
+  to {
+    transform: scale(1.05);
+  }
+}
+
+.servicio:hover {
+  transform: scale(1.1) rotate(5deg);
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.3);
+}

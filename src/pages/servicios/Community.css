@@ -1,0 +1,143 @@
+/* Community.css */
+.community-services {
+  padding: 4rem 2rem;
+  background: #f9f9f9;
+}
+
+.community-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.video-column {
+  position: sticky;
+  top: 1rem;
+}
+
+.services-column {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.community-media {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.service-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.service-item {
+  
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0px 3px rgba(20, 19, 19, 0.05)
+}
+
+.service-title {
+  font-size: 2rem;
+  color: #2d3436;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.service-number {
+  color: #666;
+  font-size: 1.8rem;
+  margin-right: 0.5rem;
+}
+
+.service-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+/* 🔹 Contenedor del botón */
+.consulta-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* 🔹 Botón con efecto de palpitación */
+.consulta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  color: #ffffff;
+  background-color: #d80c0c9b;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  animation: pulse 1.5s infinite;
+  position: relative;
+}
+
+/* 🔹 Animación de palpitación */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 🔹 Flecha animada */
+.consulta-button::after {
+  content: " →"; /* Flecha */
+  font-size: 1.5rem;
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 🔹 Efecto al pasar el mouse */
+.consulta-button:hover {
+  background-color: #a30a0a;
+  animation: none; /* Se detiene la palpitación al hacer hover */
+}
+
+.consulta-button:hover::after {
+  transform: translateX(5px); /* Mueve la flecha a la derecha */
+}
+
+@media (max-width: 1024px) {
+  .community-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .video-column {
+    position: static;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .community-services {
+    padding: 2rem 1rem;
+  }
+  
+  .service-title {
+    font-size: 1.6rem;
+  }
+  
+  .service-description {
+    font-size: 1rem;
+  }
+}

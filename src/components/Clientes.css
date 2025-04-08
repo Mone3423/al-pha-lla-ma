@@ -1,0 +1,44 @@
+
+.titulo-seccion1 {
+  color: #1b1b1b;
+  position: relative;
+  padding-bottom: 5px;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.titulo-seccion1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: #db3434;
+}
+
+/* Opcional: Animación al aparecer */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.titulo-seccion1 {
+  animation: slideIn 0.8s ease-out;
+}
+
+/* Para el contenedor principal */
+.seccion-proceso {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+}

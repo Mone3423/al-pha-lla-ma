@@ -1,0 +1,142 @@
+.proceso-container {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  color: white;
+}
+
+.parallax-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* Asegura que cubra solo la pantalla */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  /* Mantiene el efecto parallax */
+  z-index: -1;
+  transform: translateZ(0);
+}
+
+.proceso-contenido {
+  position: relative;
+  padding: 4rem 2rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+}
+
+.titulo-seccion {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgb(234, 227, 227);
+}
+
+.linea-tiempo {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  position: relative;
+}
+
+.linea-tiempo::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  background: #e63946;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.paso-card {
+  position: relative;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  width: 45%;
+  margin: 1rem 0;
+}
+
+.paso-card:nth-child(odd) {
+  margin-left: auto;
+}
+
+.paso-card:nth-child(even) {
+  margin-right: auto;
+}
+
+.paso-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.paso-indicador {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e63946;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.paso-card h3 {
+  color: #e63946;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.paso-card p {
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+  .linea-tiempo::before {
+    left: 20px;
+  }
+
+  .paso-card {
+    width: 85%;
+    margin-left: 15% !important;
+  }
+
+  .paso-indicador {
+    left: -55px;
+  }
+
+  .titulo-seccion {
+    font-size: 2rem;
+  }
+
+  .parallax-bg {
+    background-attachment: scroll;
+    /* Evita problemas en iOS */
+  }
+}
+
+@media (max-width: 480px) {
+  .paso-card {
+    width: 95%;
+    margin-left: 5% !important;
+  }
+
+  .paso-indicador {
+    left: -45px;
+    width: 35px;
+    height: 35px;
+  }
+}
