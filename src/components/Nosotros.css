@@ -144,7 +144,7 @@
     max-width: 300px; /* Reducir tamaño en desktop */
     padding-bottom: 177.78%;
   }
-}
+
 
 .presentation-video {
   position: absolute;
@@ -153,4 +153,4 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
+}}

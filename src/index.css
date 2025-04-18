@@ -1,4 +1,12 @@
 body {
+  background: linear-gradient(
+    135deg,
+    #9a1a2b 0%,    /* Rojo más intenso */
+    #b0b0af 20%,   /* Gris más contrastado */
+    #ff8c00 50%,   /* Naranja vibrante */
+    #00ced1 80%    /* Turquesa brillante */
+);
+ 
   margin: 0;
   font-family: "Montserrat", sans-serif;
   max-width: 1920px; /* Ajusta según el diseño */

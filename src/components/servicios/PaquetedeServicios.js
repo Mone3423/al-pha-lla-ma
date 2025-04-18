@@ -11,14 +11,9 @@ const PaqueteServicios = ({ titulo, precio, detalles = [], servicios = [], image
         
         {/* Círculo central */}
         <div className="centro-paquete">
-         
-          <h3>{titulo}</h3>
           <p className="precio">{precio}</p>
-          <div className="detalles-centro">
-            {detalles.map((detalle, index) => (
-              <p key={index}>{detalle}</p>
-            ))}
-          </div>
+          <h3>{titulo}</h3>
+          
         </div>
 
         {/* Servicios en órbita con iconos */}

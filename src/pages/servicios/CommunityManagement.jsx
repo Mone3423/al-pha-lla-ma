@@ -27,31 +27,31 @@ const paquetesGalleryItems = [
 ];
 const paquetes = [
   {
-    titulo: "BASIC",
-    precio: "2600 BS",
+    titulo: "FOTO Y VIDEO",
+    precio: "3500 BS",
     detalles: ["Incluye factura"],
     servicios: [
       { icono: <FaBullseye />, titulo: "", },
-      { icono: <FaComments />, titulo: "Community Management", descripcion: " Optimización de la página y monitoreo de actividad, tanto en comentarios como en mensajes, de lunes a viernes en horario de oficina" },
-      { icono: <FaCamera />, titulo: "Fotografía y Videografía", descripcion: "Creación de contenido para RRSS" },
-      { icono: <FaVideo />, titulo: "1 Video Campaña", descripcion: " Video de máximo 30 segundos de buenamcalidad para impluso del negocio" },
-      { icono: <FaCalendarAlt />, titulo: "8 Posts al Mes", descripcion: "Los posts serán  subidos de acuerdo a horas específicas y requerimientos según el tipo de negocio" },
-      { icono: <FaPhotoVideo />, titulo: "3 Video Stories", descripcion: "Videos de 15 segundos relacionados al negocio" },
+      { icono: <FaComments />, titulo: "",  },
+      { icono: <FaCamera />, titulo: "20 Fotografías", descripcion: "Nos encargamos de crear contenido para su posterior uso en diferentes R.R.S.S." },
+      { icono: <FaVideo />, titulo: "4 Video Campaña", descripcion: " Video de máximo 30 segundos de buenamcalidad para impluso del negocio" },
+      { icono: <FaCalendarAlt />, titulo: "", },
+      { icono: <FaPhotoVideo />, titulo: "",  },
       { icono: <FaChartLine />, titulo: "", },
-      { icono: <FaFacebook />, titulo: "Portada de Facebook" },
+      { icono: <FaFacebook />, titulo: "" },
 
     ],
   },
   {
     titulo: "BUSINESS",
-    precio: "3700 BS",
+    precio: "4200 BS",
     detalles: ["Incluye factura"],
     servicios: [
-      { icono: <FaChartLine />, titulo: "Alcance 20-22 mil personas", descripcion: "" },
+      { icono: <FaChartLine />, titulo: "Alcance 20-22 mil personas", },
       { icono: <FaComments />, titulo: "Community Management", descripcion: " Optimización de la página y monitoreo de actividad, tanto en comentarios como en mensajes, de lunes a viernes en horario de oficina" },
       { icono: <FaBullseye />, titulo: "Configuración de Campañas", descripcion: "Segmentación del público idoneo de  los clientes potenciales para el negocio" },
       { icono: <FaVideo />, titulo: "2 Video Campaña", descripcion: " Video de máximo 30 segundos de buenamcalidad para impluso del negocio" },
-      { icono: <FaCamera />, titulo: "Fotografía y Videografía", descripcion: "Creación de contenido para RRSS" },
+      { icono: <FaCamera />, titulo: "Fotografía y Videografía", descripcion: "Nos encargamos de crear contenido para su posterior uso en diferentes R.R.S.S." },
       { icono: <FaCalendarAlt />, titulo: "12 Posts al Mes", descripcion: "Los posts serán  subidos de acuerdo a horas específicas y requerimientos según el tipo de negocio" },
       { icono: <FaFacebook />, titulo: "Portada de Facebook" },
       { icono: <FaPhotoVideo />, titulo: "6 Video Stories", descripcion: "Videos de 15 segundos relacionados al negocio" },
@@ -67,7 +67,7 @@ const paquetes = [
       { icono: <FaComments />, titulo: "Community Management", descripcion: " Optimización de la página y monitoreo de actividad, tanto en comentarios como en mensajes, de lunes a viernes en horario de oficina" },
       { icono: <FaBullseye />, titulo: "Configuración de Campañas", descripcion: "Segmentación del público idoneo de  los clientes potenciales para el negocio" },
       { icono: <FaVideo />, titulo: "3 Video Campaña", descripcion: " Video de máximo 30 segundos de buenamcalidad para impluso del negocio" },
-      { icono: <FaCamera />, titulo: "Fotografía y Videografía", descripcion: "Creación de contenido para RRSS" },
+      { icono: <FaCamera />, titulo: "Fotografía y Videografía", descripcion: "Nos encargamos de crear contenido para su posterior uso en diferentes R.R.S.S." },
       { icono: <FaCalendarAlt />, titulo: "16 Posts al Mes", descripcion: "Los posts serán  subidos de acuerdo a horas específicas y requerimientos según el tipo de negocio" },
       { icono: <FaFacebook />, titulo: "Portada de Facebook" },
       { icono: <FaPhotoVideo />, titulo: "8 Video Stories", descripcion: "Videos de 15 segundos relacionados al negocio" }

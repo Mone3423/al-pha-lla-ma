@@ -2,7 +2,7 @@
 body {
   color: #f7f7f7;
   line-height: 1.6;
-  background:  rgb(10, 10, 10);
+background: linear-gradient(to right, #ad4552, #d2d2d1, #f9a857, #5cbcbe);
   margin: 0;
   padding: 0;
 }
@@ -13,6 +13,10 @@ body {
   margin: 80px auto;
   padding: 40px 20px;
   max-width: 1200px;
+  
+  border-radius: 40px;
+  background: rgba(53, 46, 46, 0.33); /* oscurece el video para legibilidad */
+  z-index: 1;
 }
 
 /* 📝 Títulos y Textos */
@@ -22,6 +26,7 @@ h2 {
   margin-bottom: 40px;
   letter-spacing: 0.5px;
   color:  #f7f7f7;
+
 }
 
 p {
@@ -53,7 +58,7 @@ p {
 
 /* 🏷️ Tarjeta de Paquete */
 .paquete-card {
-  background: #424141;
+  background: #424141ca;
   padding: 35px;
   border-radius: 15px;
   display: flex;
@@ -74,7 +79,7 @@ p {
 .paquete-circulo {
   width: 140px;
   height: 140px;
-  background: #0996ac;
+  background: #171818;
   border-radius: 50%;
   display: flex;
   flex-direction: column;
@@ -130,7 +135,7 @@ ul li::before {
 }
 
 .paquete-card:hover ul li {
-  color:#04242f;
+  Color:#afb6b8 ;
 }
 /* 🔹 Botones flotantes */
 .botones-flotantes {
@@ -152,7 +157,7 @@ ul li::before {
   border-radius: 15px;
   font-size: 16px;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.188);
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
@@ -161,9 +166,16 @@ ul li::before {
   transform: scale(1.1);
 }
 
+.paquete-content {
+  position: relative;
+  z-index: 2;
+  padding: 15px 10px;
+  color: white;
+}
+
 /* 🔹 Sección de Diseño */
 .diseno-grafico {
-  background: #1b1c1ee9;
+  background: #393b3fcc;
   padding: 40px;
   border-radius: 10px;
   margin-top: 20px;
@@ -180,6 +192,19 @@ ul li::before {
   font-size: 1.2rem;
   text-align: center;
   margin-bottom: 20px;
+} .contenedor-video {
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center;     /* Centrado vertical */
+  width: 100%;
+  min-height: 100vh;      /* Ocupa toda la altura de la pantalla */
+}
+
+/* Opcional: mantener relación de aspecto del video */
+.ReactPlayer {
+  max-width: 30%;         /* Máximo ancho (igual al width que tienes) */
+  height: auto;           /* Altura proporcional */
+  object-fit: contain;    /* Mantiene relación de aspecto */
 }
 
 /* 🔹 Contenedor de Servicios de Diseño */

@@ -1,9 +1,44 @@
 /* 🔹 Estilos generales */
 .footer {
-    background: #000;
+  background: 
+    /* Capa principal con colores intensificados */
+    linear-gradient(
+        135deg,
+        #9a1a2b 0%,    /* Rojo más intenso */
+        #b0b0af 20%,   /* Gris más contrastado */
+        #ff8c00 50%,   /* Naranja vibrante */
+        #00ced1 80%    /* Turquesa brillante */
+    ),
+    /* Patrón geométrico superpuesto */
+    repeating-linear-gradient(
+        45deg,
+        rgba(0,0,0,0.1) 0px,
+        rgba(0,0,0,0.1) 10px,
+        transparent 10px,
+        transparent 20px
+    ),
+    /* Efecto de profundidad */
+    radial-gradient(
+        circle at 50% 50%,
+        rgba(255,255,255,0.15) 0%,
+        rgba(0,0,0,0.15) 100%
+    );
+
+/* Mezcla de capas para efecto dramático */
+background-blend-mode: multiply, overlay, normal;
+
+/* Forma modificada para mayor impacto */
+clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 95%, 0 85%);
+
+/* Efectos adicionales */
+filter: contrast(1.2) brightness(0.95);
+box-shadow: inset 0 0 30px rgba(0,0,0,0.2);
+
+  
     color: white;
     text-align: center;
     padding: 50px 20px;
+    
   }
   
   .footer-container {
@@ -31,9 +66,9 @@
   }
   
   .footer-highlight {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: bold;
-    color: #cc2e2e;
+    color:rgb(229, 223, 223);
   }
   
   /* 🔹 Formulario */
@@ -50,7 +85,7 @@
     background: #333;
     color: white;
     font-size: 1rem;
-    border-radius: 5px;
+    border-radius: 15px;
     outline: none;
   }
   
@@ -63,11 +98,17 @@
     border: none;
     cursor: pointer;
     transition: 0.3s;
-    border-radius: 5px;
+    border-radius: 30px;
   }
   
   .footer-button:hover {
-    background: #cc2e2e;
+    background:linear-gradient(
+      135deg,
+      #9a1a2b 0%,    /* Rojo más intenso */
+      #b0b0af 20%,   /* Gris más contrastado */
+      #ff8c00 50%,   /* Naranja vibrante */
+      #00ced1 80%    /* Turquesa brillante */
+  );
     color: white;
   }
   
@@ -77,16 +118,18 @@
     justify-content: center;
     gap: 15px;
     margin-top: 10px;
+    
   }
   
   .social-icon {
     font-size: 24px;
     cursor: pointer;
     transition: 0.3s;
+    Color: black;
   }
   
   .social-icon:hover {
-    color: #cc2e2e;
+    color:rgb(219, 204, 204);
   }
   
   /* 🔹 Copyright */
@@ -94,6 +137,7 @@
     font-size: 0.9rem;
     color: #888;
     margin-top: 30px;
+    color: white;
   }
   
   .footer-copyright span {

@@ -1,7 +1,7 @@
 /*
-	jsrepo 1.41.3
-	Installed from https://reactbits.dev/default/
-	3-2-2025
+  jsrepo 1.41.3
+  Installed from https://reactbits.dev/default/
+  3-2-2025
 */
 
 import { useEffect, useRef, useState } from 'react';
@@ -903,7 +903,7 @@ export default function InfiniteMenu({ items = [] }) {
 
     const handleResize = () => sketch?.resize();
     window.addEventListener('resize', handleResize);
-    
+
     return () => {
       window.removeEventListener('resize', handleResize);
       sketch = null;
@@ -912,7 +912,7 @@ export default function InfiniteMenu({ items = [] }) {
 
   const handleButtonClick = () => {
     if (!activeItem?.link) return;
-    
+
     if (activeItem.link.startsWith('http')) {
       window.open(activeItem.link, '_blank');
     } else {
@@ -928,24 +928,19 @@ export default function InfiniteMenu({ items = [] }) {
       />
 
       {activeItem && (
-        <>
-          <h2 className={`face-title ${isMoving ? 'inactive' : 'active'}`}>
-            {activeItem.title}
-          </h2>
+        <div className={`face-content ${isMoving ? 'inactive' : 'active'}`}>
+          <h2 className="face-title">{activeItem.title}</h2>
+          <p className="face-description">{activeItem.description}</p>
 
-          <p className={`face-description ${isMoving ? 'inactive' : 'active'}`}>
-            {activeItem.description}
-          </p>
-
-          <div 
-            onClick={handleButtonClick} 
-            className={`action-button ${isMoving ? 'inactive' : 'active'}`}
+          <div
+            onClick={handleButtonClick}
+            className="action-button"
             role="button"
             tabIndex={0}
           >
             <p className="action-button-icon">&#x2197;</p>
           </div>
-        </>
+        </div>
       )}
     </div>
   );

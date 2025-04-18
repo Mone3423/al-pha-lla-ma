@@ -4,6 +4,8 @@ import CircularGallery from "../../components/Components/CircularGallery/Circula
 import { paquetesData } from "../../data/paquetesData";
 import { paquetesDataVIDEO } from "../../data/paquetesDataVIDEO";
 import "./Fotografia.css";
+import fondoProceso from '../../assets/mages/death-road-10-.svg';
+import ReactPlayer from "react-player";
 
 const Fotografia = () => {
   // 🔹 Referencias a cada sección
@@ -20,13 +22,14 @@ const Fotografia = () => {
 
   return (
     <div className="contenedor-principal">
+      <div className="parallax-bg" style={{ backgroundImage: `url(${fondoProceso})` }}></div>
       {/* 🔹 Botones flotantes */}
       <div className="botones-flotantes">
         <button onClick={() => scrollToSection(fotografiaRef)}>Fotografía</button>
         <button onClick={() => scrollToSection(videoRef)}>Audiovisual</button>
         <button onClick={() => scrollToSection(disenoRef)}>Diseño Gráfico </button>
       </div>
-      
+
       {/* 🔹 Sección de Fotografía */}
       <div ref={fotografiaRef} id="fotografia" className="paquete-container">
         {/* Renderizar todos los paquetes */}
@@ -46,7 +49,7 @@ const Fotografia = () => {
                 bend={4}
                 textColor="#ffffff"
                 borderRadius={0.1}
-                font="bold 28px 'Helvetica Neue', sans-serif"
+                font="bold 28px "
               />
             </div>
 
@@ -76,6 +79,7 @@ const Fotografia = () => {
           titulo="AUDIOVISUAL "
           descripcion="Producción de videos impactantes para tu marca."
         />
+
         {paquetesDataVIDEO.map((paquete, index) => (
           <div key={index} className="paquete-container">
             <div className="contenido-superior">
@@ -84,20 +88,23 @@ const Fotografia = () => {
                 <p>{paquete.descripcion}</p>
               </div>
 
-              {paquete.videoUrl && (
-                <div className="contenedor-video">
-                  <video
-                    controls
-                    className="video-paquete"
-                    poster={paquete.thumbnail}
-                  >
-                    <source src={paquete.videoUrl} type="video/mp4" />
-                    Tu navegador no soporta videos HTML5
-                  </video>
-                </div>
-              )}
-            </div>
+              {paquete.videos?.map((video, i) => (
+                <div key={i} className="contenedor-video">
+                  <ReactPlayer
+                    url={video.url}
+                    playing={true}       // ← Auto play
+                    muted={true}         // ← Necesario para autoplay
+                    loop={true}          // Opcional
+                    width="30%"
+                    height="100%"
+                    controls={false}     // Podés dejarlo en true si querés
+                    
+                  />
 
+                </div>
+              ))}
+
+            </div>
 
             <div className="paquete-opciones">
               {paquete.opciones.map((opcion, i) => (
@@ -159,7 +166,8 @@ const Fotografia = () => {
       </div>
 
     </div>
-  );
+
+  )
 };
 
 export default Fotografia;

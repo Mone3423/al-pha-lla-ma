@@ -5,7 +5,10 @@
 */
 
 /* Note: this CSS is only an example, you can overlay whatever you want using the activeItem logic */
-
+* {
+  box-sizing: border-box;
+  background:
+}
 #infinite-grid-menu-canvas {
   cursor: grab;
   width: 100%;
@@ -18,6 +21,7 @@
 
 #infinite-grid-menu-canvas:active {
   cursor: grabbing;
+  
 }
 
 .action-button {
@@ -40,7 +44,7 @@
   position: absolute;
   font-weight: 900;
   font-size: 4rem;
-  left: 1.6em;
+  left: 1.9em;
   top: 50%;
   color: white;
   
@@ -58,7 +62,7 @@
   user-select: none;
   position: relative;
   color: #f0f0f0;
-  top: 2px;
+ 
   font-size: 26px;
 }
 
@@ -87,7 +91,7 @@
   max-width: 13ch;
   top: 50%;
   font-size: 2rem;
-  right: 1%;
+  right: 10%;
   transform: translate(0, -50%);
   color: white;
 }
@@ -141,54 +145,79 @@
 
 @media (max-width: 768px) {
   #infinite-grid-menu-canvas {
-    height: 70vh;
+    height: 65vh; /* Reducido para mejor proporción */
   }
   
   .face-title {
     max-width: 90%;
+    width: 90%; /* Aseguramos ancho consistente */
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     -webkit-line-clamp: 3;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 6vw, 2rem); /* Tamaño responsive fluido */
+    line-height: 1.3; /* Mejor espaciado */
+    padding: 0 10px; /* Prevenir pegado a bordes */
   }
   
   .face-description {
     position: relative;
-    max-width: 50%;
-    right: auto;
-    left: 50%;
-    top: auto;
-    bottom: 20%;
-    transform: translateX(-50%);
+    max-width: 80%; /* Ancho aumentado para mejor lectura */
+    width: fit-content; /* Ajuste al contenido */
+    margin: 0 auto; /* Centrado alternativo */
+    left: unset; /* Reset posición absoluta */
+    transform: translateX(0);
+    top: -20px; /* Espaciado relativo al título */
+    bottom: unset;
     text-align: center;
+    font-size: 0.95rem;
+    padding: 8px 15px; /* Mejor legibilidad */
+    background: rgba(0,0,0,0.5); /* Fondo legible para texto */
+    border-radius: 8px; /* Estilo moderno */
   }
   
   .action-button {
     bottom: 2em !important;
-    width: 50px;
-    height: 50px;
+    width: 56px !important; /* Tamaño mínimo táctil recomendado */
+    height: 56px !important;
+    transition: all 0.3s ease; /* Suavizar cambios */
   }
 }
 
 @media (max-width: 480px) {
+  #infinite-grid-menu-canvas {
+    height: 55vh; /* Ajuste específico para móviles pequeños */
+  }
+  
   .face-title {
-    font-size: 1.5rem;
-    max-width: 95%;
+    font-size: clamp(1.2rem, 5.5vw, 1.5rem); /* Fluido entre 1.2-1.5rem */
+    -webkit-line-clamp: 2; /* Menos líneas en móviles */
+    top: 45%; /* Posicionamiento vertical ajustado */
   }
   
   .face-description {
-    font-size: 0.9rem;
-    bottom: 15%;
+    font-size: 0.85rem;
+    max-width: 90%; /* Más ancho en pantallas pequeñas */
+    top: -10px; /* Espaciado relativo ajustado */
+    padding: 6px 12px; /* Reducción proporcional */
+    bottom: 10% !important; /* Prioridad en posición */
   }
   
   .action-button {
-    width: 40px;
-    height: 40px;
-    bottom: 1.5em !important;
+    width: 48px !important; /* Tamaño accesible mínimo */
+    height: 48px !important;
+    bottom: 1.2em !important;
   }
   
   .action-button-icon {
-    font-size: 20px;
+    font-size: 22px !important; /* Mejor proporción icono/botón */
+  }
+}
+
+/* Añadir para mejor comportamiento táctil */
+@media (hover: none) and (pointer: coarse) {
+  .action-button {
+    min-width: 48px !important;
+    min-height: 48px !important;
   }
 }

@@ -9,13 +9,17 @@ import Fotografia from "./pages/servicios/Fotografia";
 import WhatsAppButton from "./components/WhatsappBoton";
 import CommunityManagement from "./pages/servicios/CommunityManagement";
 import ScrollToTop from "./components/ScrollToTop";
+import SplashCursor from './components/Animations/SplashCursor/SplashCursor'
+
+
 
 
 import Clientes from "./components/Clientes";
 function App() {
   return (
     <Router>
-      <ScrollToTop /> {/* Agregamos el fix aquí */}
+      <ScrollToTop /> 
+      <SplashCursor /> {/* Agregamos el fix aquí */}
       <Navbar />
 
       <Routes>
@@ -26,9 +30,11 @@ function App() {
         <Route path="/servicios/fotografia" element={<Fotografia />} />
         <Route path="/servicios/community-management" element={<CommunityManagement />} />
       </Routes>
-      <WhatsAppButton />
-     
+      
       <Footer />
+      
+     
+     
     </Router>
   );
 };

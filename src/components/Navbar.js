@@ -4,11 +4,8 @@ import './Navbar.css';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showSubmenu, setShowSubmenu] = useState(false);
-
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const toggleSubmenu = () => setShowSubmenu(!showSubmenu);
-
+ 
   return (
     <>
       <nav className="navbar">
@@ -16,7 +13,7 @@ const Navbar = () => {
           &#9776;
         </button>
         <div className="logo-container">
-          <img src={logo} alt="Logo de ALPHA LLAMA" className="logo-img" />
+          <img src={logo} alt="Logo de ALPHA LLAMA"  className="logo-img" />
         </div>
       </nav>
 

@@ -58,7 +58,7 @@ export const paquetesData = [
       "opciones": [
         {
           "nombre": "Paquete Básico",
-          "precio": "1100 BS",
+          "precio": "1500 BS",
           "detalles": [
             "20 fotografías de alta resolución",
             "Hasta 10 productos por sesión",
@@ -70,7 +70,7 @@ export const paquetesData = [
         },
         {
           "nombre": "Paquete Profesional",
-          "precio": "1500 BS",
+          "precio": "2000 BS",
           "detalles": [
             "20 fotografías de alta resolución",
             "Hasta 10 productos por sesión",
@@ -89,7 +89,7 @@ export const paquetesData = [
       "opciones": [
         {
           "nombre": "Paquete Estándar",
-          "precio": "1500 BS",
+          "precio": "2000 BS",
           "detalles": [
             "20 fotografías de alta resolución",
             "Cobertura para hotel/edificio/construcción",
@@ -112,7 +112,7 @@ export const paquetesData = [
       "opciones": [
         {
           "nombre": "Paquete Básico",
-          "precio": "2500 BS",
+          "precio": "3000 BS",
           "detalles": [
             "30 fotos del personal",
             "10 fotografías de alta resolución",
@@ -122,7 +122,7 @@ export const paquetesData = [
         },
         {
           "nombre": "Paquete Premium",
-          "precio": "3000 BS",
+          "precio": "3500 BS",
           "detalles": [
             "20 fotos del personal",
             "20 fotografías de alta resolución",
@@ -154,7 +154,7 @@ export const paquetesData = [
       "opciones": [
         {
           "nombre": "Paquete Estándar",
-          "precio": "2000 BS",
+          "precio": "3000 BS",
           "detalles": [
             "40 fotografías de alta resolución",
             "Incluye: Dos fotógrafos, cámara, trípode",
@@ -186,7 +186,7 @@ export const paquetesData = [
         },
         {
           "nombre": "Paquete 2",
-          "precio": "3700 BS",
+          "precio": "4000 BS",
           "detalles": [
             "30 fotografías de alta resolución",
             "2 videos de destino"

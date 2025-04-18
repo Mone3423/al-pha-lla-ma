@@ -2,7 +2,7 @@ import React from "react";
 import { FaChevronDown } from "react-icons/fa";
 import TextPressure from "../TextAnimations/TextPressure/TextPressure"; // Importamos el componente
 import "./HeroServices.css";
-
+const isMobile = window.innerWidth <= 768;
 const HeroServices = ({ titulo, descripcion, imagenFondo }) => {
   return (
     <section
@@ -13,6 +13,7 @@ const HeroServices = ({ titulo, descripcion, imagenFondo }) => {
       <div className="hero-content">
         <TextPressure
           text={titulo}
+          minFontSize={isMobile ? 40 : 90}
           flex={true}
           alpha={false}
           stroke={false}
@@ -21,7 +22,7 @@ const HeroServices = ({ titulo, descripcion, imagenFondo }) => {
           italic={true}
           textColor="#FFFFFF"
           strokeColor="#000000"
-          minFontSize={90}
+          
         />
         <p className="typing-effect">{descripcion}</p>
       </div>
@@ -29,9 +30,6 @@ const HeroServices = ({ titulo, descripcion, imagenFondo }) => {
       {/* Flecha para bajar al primer paquete */}
       <button
         className="scroll-down"
-        onClick={() =>
-          document.getElementById("primer-paquete").scrollIntoView({ behavior: "smooth" })
-        }
       >
         <FaChevronDown />
       </button>

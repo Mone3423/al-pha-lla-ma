@@ -1,5 +1,7 @@
 import React from "react";
 import "./Community.css";
+import ShinyText from '../../components/TextAnimations/ShinyText/ShinyText';
+  
 const phoneNumber = "71948121"; // Cambia esto con tu número de WhatsApp
 
 const serviciosData = [
@@ -46,9 +48,10 @@ const Community = () => (
         {/* 🔹 Botón de consulta */}
          
       <div className="consulta-container">
-        <a href={`https://wa.me/${phoneNumber}`} className="consulta-button" target="_blank" rel="noopener noreferrer">
-          Consulta una Cita
+      <a href={`https://wa.me/${phoneNumber}`} className="consulta-button" target="_blank" rel="noopener noreferrer">
           
+        <ShinyText text="Consulta una Cita" disabled={false} speed={3} className='custom-class' />
+       
 
  
         </a>

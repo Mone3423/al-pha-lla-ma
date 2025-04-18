@@ -2,13 +2,14 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const WhatsAppButton = () => {
-  const phoneNumber = "59171948121"; // Número con código de país
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const phoneNumber = "59171948121"; // Número de WhatsApp
+  const [position, setPosition] = useState({ x: 20, y: 20 });
 
-  // Función para generar nueva posición aleatoria
+  // Actualizar la posición del botón de manera aleatoria
   const updatePosition = () => {
-    const maxX = window.innerWidth - 64; // 64px = ancho del botón
-    const maxY = window.innerHeight - 64;
+    const maxX = window.innerWidth - 80; // Evita que salga de la pantalla
+    const maxY = window.innerHeight - 80;
+    
     setPosition({
       x: Math.random() * maxX,
       y: Math.random() * maxY
@@ -16,50 +17,37 @@ const WhatsAppButton = () => {
   };
 
   useEffect(() => {
-    updatePosition(); // Posición inicial
-    const interval = setInterval(updatePosition, 5000); // Cambia posición cada 5 segundos
-    
-    // Actualizar posición al redimensionar pantalla
-    const handleResize = () => updatePosition();
-    window.addEventListener("resize", handleResize);
-    
+    updatePosition(); // Establece una posición inicial
+    const interval = setInterval(updatePosition, 5000); // Cambia cada 5s
+
+    window.addEventListener("resize", updatePosition); // Se ajusta si cambia el tamaño de la pantalla
+
     return () => {
       clearInterval(interval);
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", updatePosition);
     };
   }, []);
 
   return (
-    
     <motion.a
       href={`https://wa.me/${phoneNumber}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bg-green-500 text-white p-4 rounded-full shadow-lg flex items-center justify-center w-16 h-16 z-[999] cursor-pointer"
-      style={{
-        left: position.x,
-        top: position.y
-      }}
-      animate={{
-        left: position.x,
-        top: position.y
-      }}
-      transition={{ 
-        duration: 2.5,
-        ease: "easeInOut",
-        repeatDelay: 2
-      }}
-      whileHover={{ 
-        scale: 1.2,
-        rotate: [0, 10, -10, 0], // Animación al hover
-        transition: { duration: 0.3 } 
-      }}
+      className="fixed bg-green-500 text-white p-3 rounded-full shadow-lg flex items-center justify-center w-14 h-14 z-[999] cursor-pointer"
+      style={{ left: position.x, top: position.y }}
+      animate={{ left: position.x, top: position.y }}
+      transition={{ duration: 2.5, ease: "easeInOut" }}
+      whileHover={{ scale: 1.2, rotate: [0, 10, -10, 0], transition: { duration: 0.3 } }}
       whileTap={{ scale: 0.8 }}
     >
       <img
         src="/whatsapp-icon.svg"
-        alt="Contactar por WhatsApp"
-        className="w-8 h-8"
+        alt="WhatsApp"
+        className="w-10 h-10"
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src = "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"; // Imagen de respaldo
+        }}
       />
     </motion.a>
   );

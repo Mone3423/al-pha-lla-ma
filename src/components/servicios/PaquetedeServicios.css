@@ -1,7 +1,33 @@
 
 /* ====== CÍRCULO CENTRAL ====== */
+.paquete-servicios {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    #ad4552 0%,
+    #d2d2d1 30%,
+    #f9a857 60%,
+    #5cbcbe 100%
+  );
+
+  /* Esto aplica la forma al fondo */
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+.paquete-servicios::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55); /* opacidad ajustable */
+  z-index: 1;
+}
 .centro-paquete {
-  background: #c78383;
+  background:rgba(0, 242, 255, 0.2); /* Blanco translúcido */
+  backdrop-filter: blur(12px); /* Efecto vidrio */
+  border: 2px solid rgba(25, 174, 67, 0.2); /* Borde sutil */
+  box-shadow: 0 8px 32px rgba(69, 161, 41, 0.54); /* Profundidad */
   padding: 30px;
   border-radius: 50%;
   width: 200px;
@@ -12,13 +38,22 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  z-index: 2;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  z-index: 3;
+  box-shadow: 0 0 20px rgba(36, 120, 204, 0.2);
   animation: pulse 2s infinite alternate;
+}
+.centro-paquete h3{
+  font-size: 18px;
+  
+  color: white;
+}
+.servicios-orbita p{
+  font-size: 16px
 }
 
 .servicio {
-  background: rgba(255, 255, 255, 0.15);
+  
+  background: rgba(255, 255, 255, 0.333);
   padding: 0px;
   border-radius: 25px;
   width: 400px;
@@ -28,20 +63,26 @@
   text-align: center;
   position: absolute;
   transition: all 0.3s ease;
+  z-index: 2;
 }
 
 .servicio:hover {
   transform: scale(1.1);
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(189, 177, 177, 0.3);
 }
-
+.
 .servicio p {
   font-size: 14px;
-  color: rgba(34, 49, 61, 0.567);
-  /* Texto más legible */
+  color: #222; /* Más oscuro */
+  font-weight: 500;
 }
 
+animation: neonPulse 2s infinite alternate;
 
+@keyframes neonPulse {
+    from { text-shadow: 0 0 5px #00ff9d; }
+    to { text-shadow: 0 0 15px #00ff9d; }
+}
 
 @keyframes pulse {
   from {
