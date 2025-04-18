@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import logo from "../assets/logo.png"
 import emailjs from 'emailjs-com';
 
@@ -21,7 +21,7 @@ const handleSubmit = (e) => {
 
 const Footer = () => {
   return (
-    <footer href="/" className="footer">
+    <footer id="contacto" className="footer">
       <div className="footer-container">
         <img src={logo} alt="Logo de ALPHA LLAMA" className="logo-imagen" />
 
