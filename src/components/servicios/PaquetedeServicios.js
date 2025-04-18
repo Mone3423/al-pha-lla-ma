@@ -1,26 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "../servicios/PaquetedeServicios.css";
 
-
 const PaqueteServicios = ({ titulo, precio, detalles = [], servicios = [], imagenes = [] }) => {
-  const totalServicios = servicios.length || 1; // Evitar división por 0
+  const [mostrarModal, setMostrarModal] = useState(false);
+  const totalServicios = servicios.length || 1;
+
+  const abrirModal = () => setMostrarModal(true);
+  const cerrarModal = () => setMostrarModal(false);
 
   return (
     <section className="paquete-servicios">
       <div className="paquete-contenedor">
-        
         {/* Círculo central */}
-        <div className="centro-paquete">
+        <div className="centro-paquete" onClick={abrirModal}>
           <p className="precio">{precio}</p>
           <h3>{titulo}</h3>
-          
         </div>
 
-        {/* Servicios en órbita con iconos */}
+        {/* Servicios orbitando - solo en desktop */}
         {servicios.length > 0 && (
           <div className="servicios-orbita">
             {servicios.map((servicio, index) => {
-              const angle = (360 / totalServicios) * index + 10; // Se suma 10° para evitar superposición
+              const angle = (360 / totalServicios) * index + 10;
               return (
                 <div
                   className="servicio"
@@ -29,7 +30,9 @@ const PaqueteServicios = ({ titulo, precio, detalles = [], servicios = [], image
                     transform: `rotate(${angle}deg) translate(350px) rotate(-${angle}deg)`
                   }}
                 >
-                  <div className="icono"><h3>{servicio.icono} {servicio.titulo}</h3></div>
+                  <div className="icono">
+                    <h3>{servicio.icono} {servicio.titulo}</h3>
+                  </div>
                   {servicio.descripcion && <p>{servicio.descripcion}</p>}
                 </div>
               );
@@ -37,6 +40,21 @@ const PaqueteServicios = ({ titulo, precio, detalles = [], servicios = [], image
           </div>
         )}
       </div>
+
+      {/* Modal en móviles */}
+      {mostrarModal && (
+        <div className="modal-servicios">
+          <div className="modal-contenido">
+            <button className="cerrar-modal" onClick={cerrarModal}>Cerrar</button>
+            {servicios.map((servicio, index) => (
+              <div key={index} className="servicio-modal">
+                <h3>{servicio.icono} {servicio.titulo}</h3>
+                <p>{servicio.descripcion}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 };

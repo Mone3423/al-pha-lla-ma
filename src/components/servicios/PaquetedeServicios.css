@@ -70,14 +70,68 @@
   transform: scale(1.1);
   background: rgba(189, 177, 177, 0.3);
 }
-.
+
 .servicio p {
   font-size: 14px;
   color: #222; /* Más oscuro */
   font-weight: 500;
 }
+/* Modal animado */
+.modal-servicios {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.4s ease-out;
+}
 
-animation: neonPulse 2s infinite alternate;
+.modal-contenido {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  transform: scale(0.8);
+  animation: zoomIn 0.4s ease-out forwards;
+}
+
+/* Botón cerrar */
+.cerrar-modal {
+  background-color: #ad4552;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Texto adaptable con clamp */
+.servicio-modal h3 {
+  font-size: clamp(16px, 4vw, 24px);
+  color: #222;
+  margin-bottom: 5px;
+}
+.servicio-modal p {
+  font-size: clamp(14px, 3.5vw, 18px);
+  color: #555;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  to { transform: scale(1); }
+}
+
 
 @keyframes neonPulse {
     from { text-shadow: 0 0 5px #00ff9d; }
@@ -95,15 +149,8 @@ animation: neonPulse 2s infinite alternate;
 }
 
 /* Ajustes para pantallas más pequeñas */
-@media (max-width: 768px) {
-  .centro-paquete {
-    width: 200px;
-    height: 200px;
+ @media (max-width: 768px) {
+  .servicios-orbita {
+    display: none;
   }
-
-
-  .servicio {
-    width: 160px;
-    min-height: 120px;
-  }
-} 
+}
