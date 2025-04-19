@@ -10,10 +10,9 @@ import './GridMotion.css';
 
 const GridMotion = ({ items = [], gradientColor = 'black' }) => {
   const gridRef = useRef(null);
-  const rowRefs = useRef([]); // Array of refs for each row
+  const rowRefs = useRef([]);
   const mouseXRef = useRef(window.innerWidth / 2);
 
-  // Ensure the grid has 28 items (4 rows x 7 columns) by default
   const totalItems = 28;
   const defaultItems = Array.from({ length: totalItems }, (_, index) => `Item ${index + 1}`);
   const combinedItems = items.length > 0 ? items.slice(0, totalItems) : defaultItems;
@@ -27,15 +26,14 @@ const GridMotion = ({ items = [], gradientColor = 'black' }) => {
 
     const updateMotion = () => {
       const maxMoveAmount = 300;
-      const baseDuration = 0.8; // Base duration for inertia
-      const inertiaFactors = [0.6, 0.4, 0.3, 0.2]; // Different inertia for each row, outer rows slower
+      const baseDuration = 0.8;
+      const inertiaFactors = [0.6, 0.4, 0.3, 0.2];
 
       rowRefs.current.forEach((row, index) => {
         if (row) {
           const direction = index % 2 === 0 ? 1 : -1;
           const moveAmount = ((mouseXRef.current / window.innerWidth) * maxMoveAmount - maxMoveAmount / 2) * direction;
 
-          // Apply inertia and staggered stop
           gsap.to(row, {
             x: moveAmount,
             duration: baseDuration + inertiaFactors[index % inertiaFactors.length],
@@ -47,12 +45,11 @@ const GridMotion = ({ items = [], gradientColor = 'black' }) => {
     };
 
     const removeAnimationLoop = gsap.ticker.add(updateMotion);
-
     window.addEventListener('mousemove', handleMouseMove);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-      removeAnimationLoop(); // Properly remove the ticker listener
+      removeAnimationLoop();
     };
   }, []);
 
@@ -77,18 +74,16 @@ const GridMotion = ({ items = [], gradientColor = 'black' }) => {
                   <div key={itemIndex} className="row__item">
                     <div className="row__item-inner" style={{ backgroundColor: '#111' }}>
                       {typeof content === 'string' && content.startsWith('http') ? (
-                        // Contenido para videos de Drive
-                        content.includes('drive.google.com') ? (
+                        // Contenido para Cloudinary
+                        content.includes('.mp4') ? ( // Detectar videos
                           <div className="video-container">
-                            <iframe
-                              src={`https://drive.google.com/file/d/${extractDriveId(content)}/preview`}
-                              allow="autoplay"
-                              title={`Drive video ${itemIndex}`}
-                              allowFullScreen
-                            ></iframe>
+                            <video controls className="row__item-video">
+                              <source src={content} type="video/mp4" />
+                              Tu navegador no soporta videos HTML5
+                            </video>
                           </div>
                         ) : (
-                          // Contenido para imágenes normales
+                          // Contenido para imágenes
                           <div
                             className="row__item-img"
                             style={{ backgroundImage: `url(${content})` }}
@@ -109,11 +104,5 @@ const GridMotion = ({ items = [], gradientColor = 'black' }) => {
     </div>
   );
 };
-
-// Función auxiliar para extraer el ID de Drive
-function extractDriveId(url) {
-  const match = url.match(/\/d\/([^\/]+)/);
-  return match ? match[1] : null;
-}
 
 export default GridMotion;

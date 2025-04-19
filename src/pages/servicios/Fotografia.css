@@ -194,17 +194,21 @@ ul li::before {
   margin-bottom: 20px;
 } .contenedor-video {
   display: flex;
-  justify-content: center; /* Centrado horizontal */
-  align-items: center;     /* Centrado vertical */
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  min-height: 100vh;      /* Ocupa toda la altura de la pantalla */
+  min-height: 100dvh; /* Usa dvh para mejor compatibilidad móvil */
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-/* Opcional: mantener relación de aspecto del video */
+/* Ajustes para el reproductor de video en móviles */
 .ReactPlayer {
-  max-width: 30%;         /* Máximo ancho (igual al width que tienes) */
-  height: auto;           /* Altura proporcional */
-  object-fit: contain;    /* Mantiene relación de aspecto */
+  width: 100% !important; /* Fuerza ancho completo */
+  max-width: 100% !important; /* Ancho máximo igual al contenedor */
+  height: auto !important; /* Altura proporcional */
+  aspect-ratio: 16/9; /* Mantiene relación de aspecto estándar */
+  object-fit: cover
 }
 
 /* 🔹 Contenedor de Servicios de Diseño */
@@ -303,5 +307,19 @@ ul li::before {
   .botones-flotantes button {
     padding: 8px 12px;
     font-size: 14px;
+  }
+  .contenedor-video {
+    min-height: 10dvh; /* Ajusta altura para navegadores móviles */
+    padding: 5px;
+  }
+
+  
+  .ReactPlayer {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover; /* Recorta bordes */
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 }

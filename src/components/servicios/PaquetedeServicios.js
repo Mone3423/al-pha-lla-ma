@@ -45,13 +45,18 @@ const PaqueteServicios = ({ titulo, precio, detalles = [], servicios = [], image
       {mostrarModal && (
         <div className="modal-servicios">
           <div className="modal-contenido">
-            <button className="cerrar-modal" onClick={cerrarModal}>Cerrar</button>
-            {servicios.map((servicio, index) => (
-              <div key={index} className="servicio-modal">
-                <h3>{servicio.icono} {servicio.titulo}</h3>
-                <p>{servicio.descripcion}</p>
-              </div>
-            ))}
+            <button className="cerrar-modal" onClick={cerrarModal}>×</button>
+            <div className="lista-servicios">
+              {servicios.map((servicio, index) => (
+                <div key={index} className="servicio-modal">
+                  <div className="servicio-header">
+                    <span className="servicio-icono">{servicio.icono}</span>
+                    <h3 className="servicio-titulo">{servicio.titulo}</h3>
+                  </div>
+                  <p className="servicio-descripcion">{servicio.descripcion}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       )}

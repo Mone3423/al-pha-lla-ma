@@ -102,13 +102,14 @@
 
 /* Botón cerrar */
 .cerrar-modal {
-  background-color: #ad4552;
+  background-color: #ff001eb4;
   color: #fff;
   border: none;
   padding: 10px 14px;
   margin-bottom: 20px;
   border-radius: 8px;
   cursor: pointer;
+
 }
 
 /* Texto adaptable con clamp */
@@ -120,6 +121,9 @@
 .servicio-modal p {
   font-size: clamp(14px, 3.5vw, 18px);
   color: #555;
+}
+.servicio-icono{
+  color: #e80923;
 }
 
 /* Animaciones */
@@ -134,7 +138,7 @@
 
 
 @keyframes neonPulse {
-    from { text-shadow: 0 0 5px #00ff9d; }
+    from { text-shadow: 0 0 5px #321d52; }
     to { text-shadow: 0 0 15px #00ff9d; }
 }
 
@@ -153,4 +157,5 @@
   .servicios-orbita {
     display: none;
   }
+  
 }

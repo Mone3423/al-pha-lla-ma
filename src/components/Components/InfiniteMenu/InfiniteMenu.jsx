@@ -919,6 +919,18 @@ export default function InfiniteMenu({ items = [] }) {
       navigate(activeItem.link); // Usar navigate para rutas internas
     }
   };
+  useEffect(() => {
+    // Ignorar errores de ResizeObserver
+    const originalError = window.onerror;
+    window.onerror = function(err) {
+      if (err.includes('ResizeObserver')) return true;
+      return originalError?.apply(this, arguments);
+    };
+  
+    return () => {
+      window.onerror = originalError;
+    };
+  }, []);
 
   return (
     <div style={{ position: 'relative', width: '100%', height: '100%' }}>
