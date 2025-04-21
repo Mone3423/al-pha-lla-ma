@@ -97,7 +97,7 @@ const Fotografia = () => {
                     loop={true}          // Opcional
                     width="30%"
                     height="100%"
-                    controls={false}     // Podés dejarlo en true si querés
+                    controls={true}     // Podés dejarlo en true si querés
                     
                   />
 

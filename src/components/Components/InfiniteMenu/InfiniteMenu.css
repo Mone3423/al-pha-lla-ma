@@ -7,8 +7,8 @@
 /* Note: this CSS is only an example, you can overlay whatever you want using the activeItem logic */
 * {
   box-sizing: border-box;
-  background:
 }
+
 #infinite-grid-menu-canvas {
   cursor: grab;
   width: 100%;
@@ -51,6 +51,7 @@
   /* Nuevas propiedades para limitar a 2 líneas */
   display: -webkit-box;
   -webkit-box-orient: vertical;
+  line-clamp: 2;
   -webkit-line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -130,6 +131,17 @@
   pointer-events: none;
   transition: 0.1s ease;
 }
+.menu-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none; /* permite clics sobre el botón */
+}
+
 
 @media (max-width: 1200px) {
   .face-title {
@@ -154,6 +166,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    line-clamp: 2;
     -webkit-line-clamp: 3;
     font-size: clamp(1.5rem, 6vw, 2rem); /* Tamaño responsive fluido */
     line-height: 1.3; /* Mejor espaciado */
@@ -191,6 +204,7 @@
   
   .face-title {
     font-size: clamp(1.2rem, 5.5vw, 1.5rem); /* Fluido entre 1.2-1.5rem */
+    line-clamp: 2;
     -webkit-line-clamp: 2; /* Menos líneas en móviles */
     top: 45%; /* Posicionamiento vertical ajustado */
   }
@@ -213,6 +227,45 @@
     font-size: 22px !important; /* Mejor proporción icono/botón */
   }
 }
+@media (max-width: 400px) {
+  #infinite-grid-menu-canvas {
+    height: 52vh;
+  }
+
+  .face-title {
+    font-size: clamp(1.1rem, 5vw, 1.4rem);
+    max-width: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    text-align: center;
+    padding: 0 12px;
+  }
+
+  .face-description {
+    font-size: 0.8rem;
+    top: -5px;
+    padding: 6px 10px;
+    max-width: 95%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .action-button {
+    width: 44px !important;
+    height: 44px !important;
+    bottom: 1em !important;
+  }
+
+  .action-button-icon {
+    font-size: 20px !important;
+  }
+  .menu-video {
+    height: 52vh; /* mismo que el canvas */
+  }
+}
+
 
 /* Añadir para mejor comportamiento táctil */
 @media (hover: none) and (pointer: coarse) {
