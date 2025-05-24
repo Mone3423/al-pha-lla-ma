@@ -26,7 +26,7 @@ const Navbar = () => {
             <li><a href="/servicios/fotografia">Producción/Servicios</a></li>
             <li>
               <a
-                href="https://www.uyuniwedding.com/"
+                href="https://uyuni.wedding/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
