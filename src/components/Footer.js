@@ -17,7 +17,7 @@ const Footer = () => {
         </p>
 
         <form
-          action="https://formsubmit.co/alcon.13278996@gmail.com"
+          action="https://formsubmit.co/shots@alphallama.media"
           method="POST"
           target="_blank"
           className="footer-form"
