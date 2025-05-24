@@ -39,7 +39,7 @@ const Footer = () => {
           />
 
           <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="https://www.alphallama.media/gracias" />
+          <input type="hidden" name="_next" value="https://www.alphallama.media/" />
 
           <button
             type="submit"
