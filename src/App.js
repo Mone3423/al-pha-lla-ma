@@ -6,11 +6,11 @@ import Servicios from "./components/Servicios";
 import Nosotros from "./components/Nosotros";
 import Footer from "./components/Footer";
 import Fotografia from "./pages/servicios/Fotografia";
-import WhatsAppButton from "./components/WhatsappBoton";
+
 import CommunityManagement from "./pages/servicios/CommunityManagement";
 import ScrollToTop from "./components/ScrollToTop";
 import SplashCursor from './components/Animations/SplashCursor/SplashCursor'
-
+import Gracias from "./pages/gracias";
 
 
 
@@ -29,6 +29,8 @@ function App() {
         <Route path="/clientes" element={<Clientes />} />
         <Route path="/servicios/fotografia" element={<Fotografia />} />
         <Route path="/servicios/community-management" element={<CommunityManagement />} />
+        <Route path="/gracias" element={<Gracias />} />
+
       </Routes>
       
       <Footer />
