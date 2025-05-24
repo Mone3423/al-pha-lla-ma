@@ -1,25 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Footer.css";
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
-import logo from "../assets/logo.png"
-import emailjs from 'emailjs-com';
-
-const handleSubmit = (e) => {
-  e.preventDefault();
-  
-  emailjs.sendForm(
-    'service_id', 
-    'template_id', 
-    e.target, 
-    'user_id'
-  ).then(
-    result => console.log(result.text),
-    error => console.log(error.text)
-  );
-};
-
+import logo from "../assets/logo.png";
 
 const Footer = () => {
+  const [submitted, setSubmitted] = useState(false);
+
   return (
     <footer id="contacto" className="footer">
       <div className="footer-container">
@@ -30,10 +16,37 @@ const Footer = () => {
           <span className="footer-highlight">SÉ PARTE DE LA EXPERIENCIA</span>
         </p>
 
-        <form className="footer-form" onSubmit={handleSubmit}>
-          <input type="text" placeholder="Nombre" className="footer-input" />
-          <input type="email" placeholder="Email" className="footer-input" />
-          <button type="submit" className="footer-button">ENVIAR</button>
+        <form
+          action="https://formsubmit.co/alcon.13278996@gmail.com"
+          method="POST"
+          target="_blank"
+          className="footer-form"
+          onSubmit={() => setSubmitted(true)}
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Nombre"
+            required
+            className="footer-input"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+            className="footer-input"
+          />
+
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://tusitio.com/gracias" />
+
+          <button
+            type="submit"
+            className={`footer-button ${submitted ? "sent" : ""}`}
+          >
+            {submitted ? "ENVIADO ✅" : "ENVIAR"}
+          </button>
         </form>
 
         <div className="footer-socials">
@@ -57,3 +70,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
