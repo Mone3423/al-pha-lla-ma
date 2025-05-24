@@ -1,18 +1,21 @@
 /*
-	jsrepo 1.41.3
-	Installed from https://reactbits.dev/default/
-	3-4-2025
+  jsrepo 1.41.3
+  Installed from https://reactbits.dev/default/
+  3-4-2025
 */
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import './GridMotion.css';
 
+
+
+
 const GridMotion = ({ items = [], gradientColor = 'black' }) => {
   const gridRef = useRef(null);
-  const rowRefs = useRef([]);
   const mouseXRef = useRef(window.innerWidth / 2);
-
+  const [activeImage, setActiveImage] = useState(null);
+  const rowRefs = useRef([]);
   const totalItems = 28;
   const defaultItems = Array.from({ length: totalItems }, (_, index) => `Item ${index + 1}`);
   const combinedItems = items.length > 0 ? items.slice(0, totalItems) : defaultItems;
@@ -61,6 +64,18 @@ const GridMotion = ({ items = [], gradientColor = 'black' }) => {
           background: `radial-gradient(circle, ${gradientColor} 0%, transparent 100%)`,
         }}
       >
+        {activeImage && (
+          <div className="lightbox-overlay" onClick={() => setActiveImage(null)}>
+            <img
+              src={activeImage}
+              alt="Zoomed"
+              className="lightbox-img"
+              onClick={(e) => e.stopPropagation()}
+            />
+            <button className="lightbox-close" onClick={() => setActiveImage(null)}>✕</button>
+          </div>
+        )}
+
         <div className="gridMotion-container">
           {[...Array(4)].map((_, rowIndex) => (
             <div
@@ -87,6 +102,7 @@ const GridMotion = ({ items = [], gradientColor = 'black' }) => {
                           <div
                             className="row__item-img"
                             style={{ backgroundImage: `url(${content})` }}
+                            onClick={() => setActiveImage(content)} // 👈 aquí ocurre la ampliación
                           ></div>
                         )
                       ) : (
