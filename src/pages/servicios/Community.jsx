@@ -7,7 +7,7 @@ const phoneNumber = "71948121"; // Cambia esto con tu número de WhatsApp
 const serviciosData = [
   {
     titulo: "Estrategias digitales",
-    descripcion: "Construimos la mejor estrategia para que tu marca pueda sobresalir y brillar sobre la competencia.",
+    descripcion: "Planeamos la mejor estrategia para que tu marca pueda sobresalir y brillar sobre la competencia.",
   },
   {
     titulo: "Community management",
