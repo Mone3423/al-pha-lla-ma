@@ -9,22 +9,9 @@ import fondo from "../../assets/mages/P1020096 .jpg";
 
 
 
-// Transformamos los paquetes en items para la galería
+//Aca podemos anadir otras burbujas de la parte de comunnity manager
 
-const paquetesGalleryItems = [
-  {
-    image: '/images/basic.jpg',  // Asegúrate de tener estas imágenes en tu directorio público
-    text: 'BASIC'
-  },
-  {
-    image: '/images/business.jpg',
-    text: 'BUSINESS'
-  },
-  {
-    image: '/images/profesional.jpg',
-    text: 'PROFESIONAL'
-  }
-];
+
 const paquetes = [
   {
     titulo: "FOTO Y VIDEO",

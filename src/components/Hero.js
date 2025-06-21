@@ -4,7 +4,7 @@ import ReactPlayer from "react-player";
 import VariableProximity from './TextAnimations/VariableProximity/VariableProximity'
 import "./Hero.css";
 import TextPressure from './TextAnimations/TextPressure/TextPressure';
-
+//Hero del inicio ALPHALLAMA
 const Hero = () => {
     const containerRef = useRef(null);
 

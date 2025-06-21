@@ -1,4 +1,5 @@
-import BoastedCoffeeBeans from '../assets/mages/Producto/Roasted-coffee-beans-986011 .jpg';
+//Aca puede cambiar la informacion mostrada en servicios especificamente la parte de fotograf'ia
+import BoastedCoffeeBeans from '../assets/mages/Producto/Roasted-coffee-beans-986011 .jpg'; //Este es el formato de llamar una imagen , cada imagen se encuentra en assets
 import TastyBananaCaramelMilkshake from '../assets/mages/Producto/Tasty-banana-and-caramel-milkshake-930022 .jpg';
 import BurgersWoodenTable from '../assets/mages/Producto/Burgers-in-a-wooden-table-408490 .jpg';
 import CocktailTangerine from '../assets/mages/Producto/Cocktail-with-tangerine-and-ice-1113276 .jpg';
@@ -28,7 +29,7 @@ import UVUN_3_DAY_TOUR_25 from '../assets/mages/Turismo/UYUNI_3_DAY_TOUR_25 .jpg
 import Uyuni_full_day_tour_4 from '../assets/mages/Turismo/Uyuni_full_day_tour_4 .jpg'; 
 
 export const paquetesData = [
-  
+  //Debe seguir este formato titulo,descripcion etc, 
     {
       "titulo": "FOTOGRAFÍA DE PRODUCTO",
       "descripcion": "El objetivo de este tipo de fotografía es concentrar toda la atención de los consumidores en un único elemento al producto. Para lograrlo, en la foto se muestra la mayor cantidad de información posible como tamaño, color, textura y accesorios de la pieza desde diferentes ángulos.",
@@ -55,6 +56,7 @@ export const paquetesData = [
           
         }
       ],
+      // Paquetes del servicio
       "opciones": [
         {
           "nombre": "Paquete Básico",
@@ -204,5 +206,5 @@ export const paquetesData = [
     },
     
   
-  // Agrega aquí las demás categorías (4 más)
+  // Agrega aquí las demás categorías (4 más), no olvidarse las comas
 ];

@@ -2,7 +2,7 @@ import React from "react";
 import GridMotion from "./Backgrounds/GridMotion/GridMotion"
 import "./Clientes.css"
 
-
+//Casusell de imagenes de nuestros clientes
 const items = [
  'https://res.cloudinary.com/ddajljgfe/image/upload/v1745081441/_YES4283_khwmdi.jpg',
 'https://res.cloudinary.com/ddajljgfe/image/upload/v1745081441/_YES3554_orryeo.jpg',

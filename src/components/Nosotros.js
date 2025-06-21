@@ -1,7 +1,7 @@
 import React from "react";
 import "./Nosotros.css";
 import NuestroTrabajo from "../components/Nuestrotrabajo";
-
+//Quienes somos descripcion
 const Nosotros = () => {
   return (
     <>

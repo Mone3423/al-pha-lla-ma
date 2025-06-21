@@ -1,3 +1,4 @@
+//DISEÑO GRÁFICO, LOGO, BRANDING hasta abajo como seccion de diseno
 import React, { useRef } from "react";
 import HeroServices from "../../components/servicios/HeroServices";
 import CircularGallery from "../../components/Components/CircularGallery/CircularGallery";
@@ -97,7 +98,7 @@ const Fotografia = () => {
                     loop={true}          // Opcional
                     width="30%"
                     height="100%"
-                    controls={true}     // Podés dejarlo en true si querés
+                    controls={true}     // true 
                     
                   />
 

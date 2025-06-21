@@ -1,15 +1,17 @@
+//Aca puede cambiar la informacion mostrada en servicios especificamente la parte de Video
 export const paquetesDataVIDEO = [
   {
     "titulo": "VIDEO PRODUCTO",
     "descripcion": "Piezas audiovisuales cortas que destacan características y usos de un producto, con imágenes cautivadoras.",
     "videos": [
       {
-        "url": "https://res.cloudinary.com/ddajljgfe/video/upload/v1744911232/3_hermanos_champagne_con_logo_c8enha.mp4",
+        "url": "https://res.cloudinary.com/ddajljgfe/video/upload/v1744911232/3_hermanos_champagne_con_logo_c8enha.mp4", //Url que nos da cloudinary despues de subir la imagen o video
         "thumbnail": "/images/thumb-broll-1.jpg",
         "alt": "3 Hermanos Champagne"
       },
 
     ],
+    //Paquetes de cada seccion
     "opciones": [
       {
         "nombre": "15 segundos",
